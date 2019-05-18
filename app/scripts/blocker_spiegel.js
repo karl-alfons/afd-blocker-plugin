@@ -1,5 +1,3 @@
-console.log("#### AfD CONTENT-BLOCKER ####");
-
 import { Blocker } from "./blocker_general";
 
 let blocker = new Blocker([
@@ -27,8 +25,14 @@ let blocker = new Blocker([
         selector: '.ui-tabs-panel',
         type: 'big'
     },
+    {
+        selector: '.search-teaser',
+        type: 'big'
+    },
+    {
+        selector: '.video-result-list > div.module-box',
+        type: 'big'
+    },
 ]);
 
-blocker.modifyContent([document]);
-blocker.watchPageForMutations();
-
+blocker.run([document]);

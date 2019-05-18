@@ -1,5 +1,3 @@
-console.log("#### AfD CONTENT-BLOCKER ####");
-
 import { Blocker } from "./blocker_general";
 
 let blocker = new Blocker([
@@ -23,8 +21,10 @@ let blocker = new Blocker([
         selector: 'div.entrylist__entry',
         type: 'big'
     },
+    {
+        selector: 'div#sitecontent',
+        type: 'big'
+    },
 ]);
 
-blocker.modifyContent([document]);
-blocker.watchPageForMutations();
-
+blocker.run([document]);
